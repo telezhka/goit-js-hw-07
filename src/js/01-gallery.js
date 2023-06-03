@@ -35,7 +35,12 @@ const delegation = (event) => {
 `,
     {
       onShow: (instance) => {
-        instance.element().querySelector("img").onclick = instance.close;
+        // instance.element().querySelector("img").onclick = instance.close;
+        document.addEventListener("keydown", (event) => {
+          if (event.key === "Escape") {
+            instance.close();
+          }
+        });
       },
     }
   );
