@@ -1,6 +1,6 @@
-import { galleryItems } from './gallery-items.js';
+import { galleryItems } from "./gallery-items.js";
 // Change code below this line
-const gallery = document.querySelector('.gallery');
+const gallery = document.querySelector(".gallery");
 console.log(galleryItems);
 let gallerySubArr = [];
 galleryItems.forEach(function (item) {
@@ -16,11 +16,11 @@ galleryItems.forEach(function (item) {
 </li>`;
   gallerySubArr.push(card);
 });
-gallery.innerHTML = gallerySubArr.join('');
+gallery.innerHTML = gallerySubArr.join("");
 // const basicLightbox = require('basiclightbox'); не то
-import * as basicLightbox from 'basiclightbox';
+// import * as basicLightbox from "basiclightbox";
 
-const delegation = event => {
+const delegation = (event) => {
   event.preventDefault();
   const instance = basicLightbox.create(
     `
@@ -34,12 +34,12 @@ const delegation = event => {
     </div>
 `,
     {
-      onShow: instance => {
-        instance.element().querySelector('img').onclick = instance.close;
+      onShow: (instance) => {
+        instance.element().querySelector("img").onclick = instance.close;
       },
     }
   );
 
   instance.show();
 };
-gallery.addEventListener('click', delegation);
+gallery.addEventListener("click", delegation);
